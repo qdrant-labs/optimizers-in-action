@@ -1,0 +1,11 @@
+[package]
+name = "optimizers-in-action"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+qdrant-client = "1.19.0"
+reqwest = { version = "0.13.4", features = ["query", "json"] }
+serde = { version = "1", features = ["derive"] }
+clap = { version = "4", features = ["derive"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
