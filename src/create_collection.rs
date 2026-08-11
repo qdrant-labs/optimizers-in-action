@@ -2,11 +2,11 @@ use qdrant_client::{
     Qdrant, QdrantError,
     qdrant::{
         CreateCollectionBuilder, Distance, HnswConfigDiffBuilder, OptimizersConfigDiffBuilder,
-        VectorParamsBuilder,
+        VectorParamsBuilder, VectorsConfig, VectorsConfigBuilder,
     },
 };
 
-pub const NOINDEX_THRESH_KB: u64 = 400_000; // 768 dim vector is ~3KB, and we have 100_000 vectors, so we put here 400_000 to be sure no indexing occur while uploading
+pub const NOINDEX_THRESH_KB: u64 = 7_300_000; // 1024 dim vector is ~4KB, and we have ~1_800_000 vectors, so we put here 7_300_000 to be sure no indexing occur while uploading
 
 pub async fn create_collection(
     base_url: &str,
@@ -24,7 +24,14 @@ pub async fn create_collection(
     let client = Qdrant::from_url(base_url).api_key(api_key).build()?;
     let mut coll_builder = CreateCollectionBuilder::default()
         .collection_name(collection_name)
-        .vectors_config(VectorParamsBuilder::new(768, Distance::Cosine));
+        .vectors_config(VectorsConfig::from(
+            VectorsConfigBuilder::default()
+                .add_named_vector_params(
+                    "dense",
+                    VectorParamsBuilder::new(1024, Distance::Cosine).build(),
+                )
+                .to_owned(),
+        ));
     let mut optimizers_conf = OptimizersConfigDiffBuilder::default();
     if disable_indexing {
         optimizers_conf = optimizers_conf.indexing_threshold(NOINDEX_THRESH_KB);

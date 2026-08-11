@@ -1,1 +1,5 @@
 /target
+storage/
+.useful-links
+results/queries.jsonl
+.env

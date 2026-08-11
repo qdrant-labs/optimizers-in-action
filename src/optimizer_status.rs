@@ -23,7 +23,8 @@ pub enum OptimizationStatus {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct OptimizerSegment {
-    pub uuid: String,
+    #[serde(default)]
+    pub uuid: Option<String>,
     pub points_count: u32,
 }
 
@@ -46,7 +47,8 @@ pub struct OptimizerTreeProgression {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct OptimizerProgress {
-    pub uuid: String,
+    #[serde(default)]
+    pub uuid: Option<String>,
     pub optimizer: Optimizer,
     #[serde(default)]
     pub status: Option<OptimizationStatus>,
@@ -93,10 +95,11 @@ pub async fn get_optimizations_status(
     let response: OptimizerResponse = client
         .get(format!(
             "{}/collections/{}/optimizations",
-            base_url, collection_name
+            base_url.trim_end_matches(":6334").to_string() + ":6333",
+            collection_name
         ))
         .headers(header_map)
-        .query(&[("with", "completed,idle,queued")])
+        .query(&[("with", "completed,idle_segments,queued")])
         .send()
         .await?
         .json()
