@@ -15,13 +15,13 @@ pub async fn churn_points(
     batch_size: u32,
     verbose: bool,
 ) -> Result<u64, QdrantError> {
-    let client = Qdrant::from_url(base_url).api_key(api_key).build()?;
+    let client = Qdrant::from_url(base_url)
+        .api_key(api_key)
+        .timeout(6000)
+        .build()?;
 
     let info = client.collection_info(collection_name).await?;
-    let total = info
-        .result
-        .and_then(|r| r.points_count)
-        .unwrap_or_default();
+    let total = info.result.and_then(|r| r.points_count).unwrap_or_default();
     let target = ((total as f64) * fraction).round() as u64;
 
     let mut ids = Vec::new();

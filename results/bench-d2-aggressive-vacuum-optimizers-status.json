@@ -1,0 +1,843 @@
+{
+  "result": {
+    "summary": {
+      "queued_optimizations": 0,
+      "queued_points": 0,
+      "queued_segments": 0,
+      "idle_segments": 7
+    },
+    "running": [],
+    "completed": [
+      {
+        "uuid": "b621e679-0d89-4042-9923-873b706bf88c",
+        "optimizer": "indexing",
+        "status": "done",
+        "segments": [
+          {
+            "uuid": "5c8b5e1e-a6b7-44b0-b9d4-e60d29bc3f54",
+            "points_count": 121780
+          },
+          {
+            "uuid": "c2e2d17b-f644-454d-ba3d-ccd78ef8e307",
+            "points_count": 65312
+          }
+        ],
+        "progress": {
+          "name": "Segment Optimizing",
+          "started_at": "2026-08-12T20:53:50.290861271Z",
+          "finished_at": "2026-08-12T21:25:59.083359293Z",
+          "duration_sec": 1928.792495058,
+          "total": null,
+          "done": null,
+          "children": [
+            {
+              "name": "copy_data",
+              "started_at": "2026-08-12T20:53:50.411097916Z",
+              "finished_at": "2026-08-12T20:53:59.599222972Z",
+              "duration_sec": 9.188123835,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "populate_vector_storages",
+              "started_at": "2026-08-12T20:53:59.599226614Z",
+              "finished_at": "2026-08-12T20:55:13.252682199Z",
+              "duration_sec": 73.653455062,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "wait_cpu_permit",
+              "started_at": "2026-08-12T20:55:13.252685144Z",
+              "finished_at": "2026-08-12T21:23:30.720320716Z",
+              "duration_sec": 1697.467635279,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "quantization",
+              "started_at": "2026-08-12T21:23:30.903473778Z",
+              "finished_at": "2026-08-12T21:23:30.903479173Z",
+              "duration_sec": 4.722e-6,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "payload_index",
+              "started_at": "2026-08-12T21:23:30.903666237Z",
+              "finished_at": "2026-08-12T21:23:30.909613024Z",
+              "duration_sec": 0.005945578,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "vector_index",
+              "started_at": "2026-08-12T21:23:30.910830418Z",
+              "finished_at": "2026-08-12T21:25:58.878073458Z",
+              "duration_sec": 147.96724153,
+              "total": null,
+              "done": null,
+              "children": [
+                {
+                  "name": "dense",
+                  "started_at": "2026-08-12T21:23:30.910843094Z",
+                  "finished_at": "2026-08-12T21:25:58.876135820Z",
+                  "duration_sec": 147.965292208,
+                  "total": null,
+                  "done": null,
+                  "children": [
+                    {
+                      "name": "migrate",
+                      "started_at": "2026-08-12T21:23:30.968942905Z",
+                      "finished_at": "2026-08-12T21:23:31.081129837Z",
+                      "duration_sec": 0.112185982,
+                      "total": null,
+                      "done": null,
+                      "children": null
+                    },
+                    {
+                      "name": "main_graph",
+                      "started_at": "2026-08-12T21:23:31.081131155Z",
+                      "finished_at": "2026-08-12T21:25:58.741213487Z",
+                      "duration_sec": 147.660081668,
+                      "total": 121780,
+                      "done": 121780,
+                      "children": null
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "sparse_vector_index",
+              "started_at": "2026-08-12T21:25:58.878074871Z",
+              "finished_at": "2026-08-12T21:25:58.878075544Z",
+              "duration_sec": 6.06e-7,
+              "total": null,
+              "done": null,
+              "children": null
+            }
+          ]
+        }
+      },
+      {
+        "uuid": "3621ae10-d3c4-466b-9d02-92aa1cbbdd80",
+        "optimizer": "indexing",
+        "status": "done",
+        "segments": [
+          {
+            "uuid": "3173e9ca-33f1-4723-a83b-3627b5026d18",
+            "points_count": 517888
+          }
+        ],
+        "progress": {
+          "name": "Segment Optimizing",
+          "started_at": "2026-08-12T20:52:48.121644842Z",
+          "finished_at": "2026-08-12T21:30:55.178806264Z",
+          "duration_sec": 2287.057161066,
+          "total": null,
+          "done": null,
+          "children": [
+            {
+              "name": "copy_data",
+              "started_at": "2026-08-12T20:52:48.191760785Z",
+              "finished_at": "2026-08-12T20:53:38.175394698Z",
+              "duration_sec": 49.983632754,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "populate_vector_storages",
+              "started_at": "2026-08-12T20:53:38.175398190Z",
+              "finished_at": "2026-08-12T20:56:49.519823625Z",
+              "duration_sec": 191.344424323,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "wait_cpu_permit",
+              "started_at": "2026-08-12T20:56:49.520252764Z",
+              "finished_at": "2026-08-12T21:25:59.001029066Z",
+              "duration_sec": 1749.480775142,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "quantization",
+              "started_at": "2026-08-12T21:25:59.985739858Z",
+              "finished_at": "2026-08-12T21:25:59.985746472Z",
+              "duration_sec": 5.711e-6,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "payload_index",
+              "started_at": "2026-08-12T21:25:59.986015239Z",
+              "finished_at": "2026-08-12T21:25:59.987468089Z",
+              "duration_sec": 0.001452508,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "vector_index",
+              "started_at": "2026-08-12T21:25:59.988631085Z",
+              "finished_at": "2026-08-12T21:30:55.027515248Z",
+              "duration_sec": 295.03888379,
+              "total": null,
+              "done": null,
+              "children": [
+                {
+                  "name": "dense",
+                  "started_at": "2026-08-12T21:25:59.988645376Z",
+                  "finished_at": "2026-08-12T21:30:55.025385335Z",
+                  "duration_sec": 295.036739418,
+                  "total": null,
+                  "done": null,
+                  "children": [
+                    {
+                      "name": "migrate",
+                      "started_at": "2026-08-12T21:26:00.177969985Z",
+                      "finished_at": "2026-08-12T21:26:00.177969985Z",
+                      "duration_sec": 0.0,
+                      "total": null,
+                      "done": null,
+                      "children": null
+                    },
+                    {
+                      "name": "main_graph",
+                      "started_at": "2026-08-12T21:26:00.177971222Z",
+                      "finished_at": "2026-08-12T21:30:54.796993661Z",
+                      "duration_sec": 294.619021825,
+                      "total": 517888,
+                      "done": 517888,
+                      "children": null
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "sparse_vector_index",
+              "started_at": "2026-08-12T21:30:55.027515618Z",
+              "finished_at": "2026-08-12T21:30:55.027515950Z",
+              "duration_sec": 2.92e-7,
+              "total": null,
+              "done": null,
+              "children": null
+            }
+          ]
+        }
+      },
+      {
+        "uuid": "ca729037-de02-48a1-8570-04077005a690",
+        "optimizer": "indexing",
+        "status": "done",
+        "segments": [
+          {
+            "uuid": "946c0094-9f3d-4f7a-bd6b-10d5152098b7",
+            "points_count": 378624
+          }
+        ],
+        "progress": {
+          "name": "Segment Optimizing",
+          "started_at": "2026-08-12T20:52:10.397100160Z",
+          "finished_at": "2026-08-12T21:26:21.682125804Z",
+          "duration_sec": 2051.285025146,
+          "total": null,
+          "done": null,
+          "children": [
+            {
+              "name": "copy_data",
+              "started_at": "2026-08-12T20:52:10.423514544Z",
+              "finished_at": "2026-08-12T20:52:36.508997618Z",
+              "duration_sec": 26.085479488,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "populate_vector_storages",
+              "started_at": "2026-08-12T20:52:36.509008499Z",
+              "finished_at": "2026-08-12T20:52:37.001064371Z",
+              "duration_sec": 0.492055139,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "wait_cpu_permit",
+              "started_at": "2026-08-12T20:52:37.001067711Z",
+              "finished_at": "2026-08-12T20:53:50.291001793Z",
+              "duration_sec": 73.289933464,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "quantization",
+              "started_at": "2026-08-12T20:53:50.991396150Z",
+              "finished_at": "2026-08-12T20:53:50.991415369Z",
+              "duration_sec": 0.000015604,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "payload_index",
+              "started_at": "2026-08-12T20:53:50.992052615Z",
+              "finished_at": "2026-08-12T20:53:51.002772821Z",
+              "duration_sec": 0.010718827,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "vector_index",
+              "started_at": "2026-08-12T20:53:51.011815330Z",
+              "finished_at": "2026-08-12T21:26:21.234416880Z",
+              "duration_sec": 1950.22259786,
+              "total": null,
+              "done": null,
+              "children": [
+                {
+                  "name": "dense",
+                  "started_at": "2026-08-12T20:53:51.011867518Z",
+                  "finished_at": "2026-08-12T21:26:21.228882981Z",
+                  "duration_sec": 1950.217014931,
+                  "total": null,
+                  "done": null,
+                  "children": [
+                    {
+                      "name": "migrate",
+                      "started_at": "2026-08-12T20:53:51.599356795Z",
+                      "finished_at": "2026-08-12T20:53:51.599356795Z",
+                      "duration_sec": 0.0,
+                      "total": null,
+                      "done": null,
+                      "children": null
+                    },
+                    {
+                      "name": "main_graph",
+                      "started_at": "2026-08-12T20:53:51.599370015Z",
+                      "finished_at": "2026-08-12T21:26:20.950958558Z",
+                      "duration_sec": 1949.351587956,
+                      "total": 378624,
+                      "done": 378624,
+                      "children": null
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "sparse_vector_index",
+              "started_at": "2026-08-12T21:26:21.234417771Z",
+              "finished_at": "2026-08-12T21:26:21.234418715Z",
+              "duration_sec": 8.53e-7,
+              "total": null,
+              "done": null,
+              "children": null
+            }
+          ]
+        }
+      },
+      {
+        "uuid": "752223a1-481b-4fdd-b6da-5ee4666786d4",
+        "optimizer": "indexing",
+        "status": "done",
+        "segments": [
+          {
+            "uuid": "04b817e3-280b-464b-bbf4-872562179d47",
+            "points_count": 340352
+          }
+        ],
+        "progress": {
+          "name": "Segment Optimizing",
+          "started_at": "2026-08-12T20:51:48.744838832Z",
+          "finished_at": "2026-08-12T21:28:31.567999740Z",
+          "duration_sec": 2202.823159822,
+          "total": null,
+          "done": null,
+          "children": [
+            {
+              "name": "copy_data",
+              "started_at": "2026-08-12T20:51:48.842783811Z",
+              "finished_at": "2026-08-12T20:52:10.308987813Z",
+              "duration_sec": 21.466203091,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "populate_vector_storages",
+              "started_at": "2026-08-12T20:52:10.308991137Z",
+              "finished_at": "2026-08-12T20:52:10.396869445Z",
+              "duration_sec": 0.087877966,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "wait_cpu_permit",
+              "started_at": "2026-08-12T20:52:10.396870846Z",
+              "finished_at": "2026-08-12T20:52:10.396894386Z",
+              "duration_sec": 0.000023496,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "quantization",
+              "started_at": "2026-08-12T20:52:10.634369759Z",
+              "finished_at": "2026-08-12T20:52:10.634374385Z",
+              "duration_sec": 3.907e-6,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "payload_index",
+              "started_at": "2026-08-12T20:52:10.634500101Z",
+              "finished_at": "2026-08-12T20:52:10.636295061Z",
+              "duration_sec": 0.001794857,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "vector_index",
+              "started_at": "2026-08-12T20:52:10.637196399Z",
+              "finished_at": "2026-08-12T21:28:31.314635024Z",
+              "duration_sec": 2180.677438259,
+              "total": null,
+              "done": null,
+              "children": [
+                {
+                  "name": "dense",
+                  "started_at": "2026-08-12T20:52:10.637205283Z",
+                  "finished_at": "2026-08-12T21:28:31.310430754Z",
+                  "duration_sec": 2180.673225339,
+                  "total": null,
+                  "done": null,
+                  "children": [
+                    {
+                      "name": "migrate",
+                      "started_at": "2026-08-12T20:52:10.693335383Z",
+                      "finished_at": "2026-08-12T20:52:10.693335383Z",
+                      "duration_sec": 0.0,
+                      "total": null,
+                      "done": null,
+                      "children": null
+                    },
+                    {
+                      "name": "main_graph",
+                      "started_at": "2026-08-12T20:52:10.693336574Z",
+                      "finished_at": "2026-08-12T21:28:31.049058275Z",
+                      "duration_sec": 2180.355721063,
+                      "total": 341792,
+                      "done": 341792,
+                      "children": null
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "sparse_vector_index",
+              "started_at": "2026-08-12T21:28:31.314636102Z",
+              "finished_at": "2026-08-12T21:28:31.314636796Z",
+              "duration_sec": 6.08e-7,
+              "total": null,
+              "done": null,
+              "children": null
+            }
+          ]
+        }
+      },
+      {
+        "uuid": "bbc3e8b5-9699-41c6-91b9-d660f02894f6",
+        "optimizer": "indexing",
+        "status": "done",
+        "segments": [
+          {
+            "uuid": "8cab0905-f986-4766-90cc-58fb1beebc7a",
+            "points_count": 241504
+          }
+        ],
+        "progress": {
+          "name": "Segment Optimizing",
+          "started_at": "2026-08-12T20:50:51.746013737Z",
+          "finished_at": "2026-08-12T21:23:30.530664389Z",
+          "duration_sec": 1958.78465033,
+          "total": null,
+          "done": null,
+          "children": [
+            {
+              "name": "copy_data",
+              "started_at": "2026-08-12T20:50:52.045625690Z",
+              "finished_at": "2026-08-12T20:51:12.311409416Z",
+              "duration_sec": 20.265782484,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "populate_vector_storages",
+              "started_at": "2026-08-12T20:51:12.311411979Z",
+              "finished_at": "2026-08-12T20:52:06.824714137Z",
+              "duration_sec": 54.513300723,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "wait_cpu_permit",
+              "started_at": "2026-08-12T20:52:06.824719424Z",
+              "finished_at": "2026-08-12T20:52:48.121346301Z",
+              "duration_sec": 41.296626032,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "quantization",
+              "started_at": "2026-08-12T20:52:48.221412079Z",
+              "finished_at": "2026-08-12T20:52:48.221416794Z",
+              "duration_sec": 4.178e-6,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "payload_index",
+              "started_at": "2026-08-12T20:52:48.221527961Z",
+              "finished_at": "2026-08-12T20:52:48.222916041Z",
+              "duration_sec": 0.001387829,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "vector_index",
+              "started_at": "2026-08-12T20:52:48.223870278Z",
+              "finished_at": "2026-08-12T21:23:30.220027590Z",
+              "duration_sec": 1841.996156826,
+              "total": null,
+              "done": null,
+              "children": [
+                {
+                  "name": "dense",
+                  "started_at": "2026-08-12T20:52:48.223881021Z",
+                  "finished_at": "2026-08-12T21:23:30.217364410Z",
+                  "duration_sec": 1841.993483287,
+                  "total": null,
+                  "done": null,
+                  "children": [
+                    {
+                      "name": "migrate",
+                      "started_at": "2026-08-12T20:52:48.258690285Z",
+                      "finished_at": "2026-08-12T20:52:48.258690285Z",
+                      "duration_sec": 0.0,
+                      "total": null,
+                      "done": null,
+                      "children": null
+                    },
+                    {
+                      "name": "main_graph",
+                      "started_at": "2026-08-12T20:52:48.258691571Z",
+                      "finished_at": "2026-08-12T21:23:29.966248432Z",
+                      "duration_sec": 1841.707556367,
+                      "total": 243488,
+                      "done": 243488,
+                      "children": null
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "sparse_vector_index",
+              "started_at": "2026-08-12T21:23:30.220028198Z",
+              "finished_at": "2026-08-12T21:23:30.220029140Z",
+              "duration_sec": 8.66e-7,
+              "total": null,
+              "done": null,
+              "children": null
+            }
+          ]
+        }
+      },
+      {
+        "uuid": "c2e2d17b-f644-454d-ba3d-ccd78ef8e307",
+        "optimizer": "indexing",
+        "status": "done",
+        "segments": [
+          {
+            "uuid": "ce1f7442-cca1-4a7e-8861-2998fdb59f31",
+            "points_count": 65312
+          }
+        ],
+        "progress": {
+          "name": "Segment Optimizing",
+          "started_at": "2026-08-12T20:48:52.010077924Z",
+          "finished_at": "2026-08-12T20:52:48.066673648Z",
+          "duration_sec": 236.056594833,
+          "total": null,
+          "done": null,
+          "children": [
+            {
+              "name": "copy_data",
+              "started_at": "2026-08-12T20:48:52.041067945Z",
+              "finished_at": "2026-08-12T20:48:57.339589612Z",
+              "duration_sec": 5.298516261,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "populate_vector_storages",
+              "started_at": "2026-08-12T20:48:57.339611842Z",
+              "finished_at": "2026-08-12T20:48:57.429010301Z",
+              "duration_sec": 0.089397859,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "wait_cpu_permit",
+              "started_at": "2026-08-12T20:48:57.429017046Z",
+              "finished_at": "2026-08-12T20:51:48.744633653Z",
+              "duration_sec": 171.315615856,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "quantization",
+              "started_at": "2026-08-12T20:51:48.770723749Z",
+              "finished_at": "2026-08-12T20:51:48.770728432Z",
+              "duration_sec": 3.85e-6,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "payload_index",
+              "started_at": "2026-08-12T20:51:48.770880183Z",
+              "finished_at": "2026-08-12T20:51:48.773330840Z",
+              "duration_sec": 0.002450312,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "vector_index",
+              "started_at": "2026-08-12T20:51:48.773986852Z",
+              "finished_at": "2026-08-12T20:52:48.007776955Z",
+              "duration_sec": 59.233789911,
+              "total": null,
+              "done": null,
+              "children": [
+                {
+                  "name": "dense",
+                  "started_at": "2026-08-12T20:51:48.773995188Z",
+                  "finished_at": "2026-08-12T20:52:48.007139674Z",
+                  "duration_sec": 59.233144327,
+                  "total": null,
+                  "done": null,
+                  "children": [
+                    {
+                      "name": "migrate",
+                      "started_at": "2026-08-12T20:51:48.793672351Z",
+                      "finished_at": "2026-08-12T20:51:48.793672351Z",
+                      "duration_sec": 0.0,
+                      "total": null,
+                      "done": null,
+                      "children": null
+                    },
+                    {
+                      "name": "main_graph",
+                      "started_at": "2026-08-12T20:51:48.793673703Z",
+                      "finished_at": "2026-08-12T20:52:47.952184735Z",
+                      "duration_sec": 59.158510914,
+                      "total": 65312,
+                      "done": 65312,
+                      "children": null
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "sparse_vector_index",
+              "started_at": "2026-08-12T20:52:48.007778067Z",
+              "finished_at": "2026-08-12T20:52:48.007778583Z",
+              "duration_sec": 4.77e-7,
+              "total": null,
+              "done": null,
+              "children": null
+            }
+          ]
+        }
+      },
+      {
+        "uuid": "82fa6717-a515-45fe-ace4-43044b9c64ba",
+        "optimizer": "indexing",
+        "status": "done",
+        "segments": [
+          {
+            "uuid": "32e78aca-fbaa-44a4-91d1-374e5b3138cc",
+            "points_count": 45664
+          },
+          {
+            "uuid": "e7347d28-54ed-45c8-a352-8933c9d6e2e9",
+            "points_count": 45632
+          }
+        ],
+        "progress": {
+          "name": "Segment Optimizing",
+          "started_at": "2026-08-12T20:48:11.079950438Z",
+          "finished_at": "2026-08-12T20:51:47.859690645Z",
+          "duration_sec": 216.779739631,
+          "total": null,
+          "done": null,
+          "children": [
+            {
+              "name": "copy_data",
+              "started_at": "2026-08-12T20:48:11.106488474Z",
+              "finished_at": "2026-08-12T20:48:14.339670034Z",
+              "duration_sec": 3.233180477,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "populate_vector_storages",
+              "started_at": "2026-08-12T20:48:14.339677842Z",
+              "finished_at": "2026-08-12T20:48:14.431394827Z",
+              "duration_sec": 0.091715948,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "wait_cpu_permit",
+              "started_at": "2026-08-12T20:48:14.431400521Z",
+              "finished_at": "2026-08-12T20:50:51.745290278Z",
+              "duration_sec": 157.313889422,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "quantization",
+              "started_at": "2026-08-12T20:50:51.795544978Z",
+              "finished_at": "2026-08-12T20:50:51.795549717Z",
+              "duration_sec": 4.026e-6,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "payload_index",
+              "started_at": "2026-08-12T20:50:51.795694341Z",
+              "finished_at": "2026-08-12T20:50:51.799947500Z",
+              "duration_sec": 0.004252917,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "vector_index",
+              "started_at": "2026-08-12T20:50:51.800993548Z",
+              "finished_at": "2026-08-12T20:51:47.777997898Z",
+              "duration_sec": 55.977003335,
+              "total": null,
+              "done": null,
+              "children": [
+                {
+                  "name": "dense",
+                  "started_at": "2026-08-12T20:50:51.801003530Z",
+                  "finished_at": "2026-08-12T20:51:47.776178452Z",
+                  "duration_sec": 55.975174718,
+                  "total": null,
+                  "done": null,
+                  "children": [
+                    {
+                      "name": "migrate",
+                      "started_at": "2026-08-12T20:50:51.825274385Z",
+                      "finished_at": "2026-08-12T20:50:51.825274385Z",
+                      "duration_sec": 0.0,
+                      "total": null,
+                      "done": null,
+                      "children": null
+                    },
+                    {
+                      "name": "main_graph",
+                      "started_at": "2026-08-12T20:50:51.825275988Z",
+                      "finished_at": "2026-08-12T20:51:47.596096538Z",
+                      "duration_sec": 55.770819936,
+                      "total": 91296,
+                      "done": 91296,
+                      "children": null
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "sparse_vector_index",
+              "started_at": "2026-08-12T20:51:47.777999230Z",
+              "finished_at": "2026-08-12T20:51:47.778000018Z",
+              "duration_sec": 5.85e-7,
+              "total": null,
+              "done": null,
+              "children": null
+            }
+          ]
+        }
+      }
+    ],
+    "queued": [],
+    "idle_segments": [
+      {
+        "uuid": "b621e679-0d89-4042-9923-873b706bf88c",
+        "points_count": 140420
+      },
+      {
+        "uuid": "bbc3e8b5-9699-41c6-91b9-d660f02894f6",
+        "points_count": 182513
+      },
+      {
+        "uuid": "752223a1-481b-4fdd-b6da-5ee4666786d4",
+        "points_count": 256251
+      },
+      {
+        "uuid": "3621ae10-d3c4-466b-9d02-92aa1cbbdd80",
+        "points_count": 388381
+      },
+      {
+        "uuid": "82fa6717-a515-45fe-ace4-43044b9c64ba",
+        "points_count": 68623
+      },
+      {
+        "uuid": "ca729037-de02-48a1-8570-04077005a690",
+        "points_count": 283947
+      },
+      {
+        "uuid": "bd5923a3-f4cf-4dde-afb7-12432750edb6",
+        "points_count": 0
+      }
+    ]
+  }
+}

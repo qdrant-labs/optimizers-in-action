@@ -13,7 +13,10 @@ pub async fn run_search(
     repeat: usize,
     verbose: bool,
 ) -> Result<LatencyStats, QdrantError> {
-    let client = Qdrant::from_url(base_url).api_key(api_key).build()?;
+    let client = Qdrant::from_url(base_url)
+        .api_key(api_key)
+        .timeout(6000)
+        .build()?;
     let mut durations = Vec::with_capacity(queries.len() * repeat);
     let wall_start = Instant::now();
 
@@ -32,5 +35,8 @@ pub async fn run_search(
         }
     }
 
-    Ok(LatencyStats::from_durations(durations, wall_start.elapsed()))
+    Ok(LatencyStats::from_durations(
+        durations,
+        wall_start.elapsed(),
+    ))
 }

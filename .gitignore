@@ -3,3 +3,8 @@ storage/
 .useful-links
 results/queries.jsonl
 .env
+.claude
+.agents
+scripts/write-and-review-loop.sh
+*.md
+!README.md

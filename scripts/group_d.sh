@@ -7,7 +7,7 @@ run_one() {
   collection="$1"; out="$2"; shift 2
   ./scripts/bench_one.sh "$collection" "$out" --no-disable-indexing "$@"
   cargo run --release -- churn "$collection" --fraction 0.25 --verbose
-  cargo run --release -- opt-status "$collection"
+  cargo run --release -- opt-status "$collection" > "${out%.jsonl}-optimizers-status.json"
   cargo run --release -- search "$collection" results/queries.jsonl --repeat 5 --verbose > "${out%.jsonl}-post-churn.log"
 }
 

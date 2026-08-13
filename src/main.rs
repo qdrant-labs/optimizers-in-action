@@ -1,6 +1,7 @@
 mod bench;
 mod churn;
 mod create_collection;
+mod memory_snapshot;
 mod metrics;
 mod optimizer_status;
 mod query_set;
@@ -13,14 +14,27 @@ use std::env;
 use clap::{Parser, Subcommand};
 
 use crate::{
-    bench::run_bench, churn::churn_points, create_collection::create_collection,
-    optimizer_status::get_optimizations_status, query_set::load_queries, query_set::sample_queries,
-    reconfigure::reconfigure_collection, search::run_search, upload::load_embeddings,
+    bench::run_bench,
+    churn::churn_points,
+    create_collection::create_collection,
+    memory_snapshot::fetch_collection_memory,
+    optimizer_status::get_optimizations_status,
+    query_set::{load_queries, sample_queries},
+    reconfigure::reconfigure_collection,
+    search::run_search,
+    upload::load_embeddings,
 };
 
 #[derive(Debug, Subcommand)]
 enum Commands {
     OptStatus {
+        collection: String,
+        #[arg(long, default_value = None)]
+        api_key: Option<String>,
+        #[arg(long, default_value = None)]
+        base_url: Option<String>,
+    },
+    MemStatus {
         collection: String,
         #[arg(long, default_value = None)]
         api_key: Option<String>,
@@ -126,9 +140,9 @@ enum Commands {
         #[arg(long, default_value_t = false)]
         verbose: bool,
     },
-    /// Run upload and search concurrently, tagging search latency by
-    /// loading-phase vs steady-phase (optimizers idle), for a single
-    /// experiment configuration.
+    /// Upload to completion, then search continuously while optimizers drain
+    /// the post-load backlog, then run a fixed number of passes once
+    /// optimizers report idle, for a single experiment configuration.
     Bench {
         data_file: String,
         collection: String,
@@ -144,8 +158,17 @@ enum Commands {
         poll_interval_ms: u64,
         #[arg(long, default_value_t = 3)]
         idle_stability_rounds: u32,
-        #[arg(long, default_value_t = 300)]
-        steady_timeout_secs: u64,
+        /// Safety fallback only: give up waiting for optimizers to go idle after this long.
+        #[arg(long, default_value_t = 3600)]
+        drain_timeout_secs: u64,
+        /// Query-set passes to run once optimizers are confirmed idle.
+        #[arg(long, default_value_t = 5)]
+        steady_repeat: usize,
+        /// Poll /collections/{name}/memory alongside the search loop. Off by
+        /// default: existing result files predate this and simply have no
+        /// memory events, rather than needing an explanation for missing them.
+        #[arg(long, default_value_t = false)]
+        enable_memory_monitoring: bool,
     },
 }
 
@@ -183,6 +206,16 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             let key = resolve_api_key(api_key);
             let opt = get_optimizations_status(&bu, key.as_deref(), &collection).await?;
             println!("{}", serde_json::to_string_pretty(&opt)?);
+        }
+        Commands::MemStatus {
+            collection,
+            api_key,
+            base_url,
+        } => {
+            let bu = resolve_base_url(base_url)?;
+            let key = resolve_api_key(api_key);
+            let mem = fetch_collection_memory(&bu, key.as_deref(), &collection).await?;
+            println!("{}", serde_json::to_string_pretty(&mem)?);
         }
         Commands::Create {
             collection,
@@ -336,7 +369,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             search_limit,
             poll_interval_ms,
             idle_stability_rounds,
-            steady_timeout_secs,
+            drain_timeout_secs,
+            steady_repeat,
+            enable_memory_monitoring,
         } => {
             let bu = resolve_base_url(base_url)?;
             let key = resolve_api_key(api_key);
@@ -349,7 +384,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                 search_limit,
                 poll_interval_ms,
                 idle_stability_rounds,
-                steady_timeout_secs,
+                drain_timeout_secs,
+                steady_repeat,
+                enable_memory_monitoring,
                 &out,
             )
             .await?;

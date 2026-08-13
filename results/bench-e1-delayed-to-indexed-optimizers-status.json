@@ -1,0 +1,164 @@
+{
+  "result": {
+    "summary": {
+      "queued_optimizations": 4,
+      "queued_points": 1005824,
+      "queued_segments": 4,
+      "idle_segments": 0
+    },
+    "running": [
+      {
+        "uuid": "eea84bc8-e106-4ad8-ac14-23ec63e03cd5",
+        "optimizer": "indexing",
+        "status": "optimizing",
+        "segments": [
+          {
+            "uuid": "7882ee78-c739-4eee-b326-b5b958267a92",
+            "points_count": 251456
+          }
+        ],
+        "progress": {
+          "name": "Segment Optimizing",
+          "started_at": "2026-08-13T12:29:56.393206144Z",
+          "finished_at": null,
+          "duration_sec": null,
+          "total": null,
+          "done": null,
+          "children": [
+            {
+              "name": "copy_data",
+              "started_at": "2026-08-13T12:29:56.400199496Z",
+              "finished_at": null,
+              "duration_sec": null,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "populate_vector_storages",
+              "started_at": null,
+              "finished_at": null,
+              "duration_sec": null,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "wait_cpu_permit",
+              "started_at": null,
+              "finished_at": null,
+              "duration_sec": null,
+              "total": null,
+              "done": null,
+              "children": null
+            }
+          ]
+        }
+      },
+      {
+        "uuid": "4da1494e-723c-4c57-84a4-b5d3050d7f0e",
+        "optimizer": "indexing",
+        "status": "optimizing",
+        "segments": [
+          {
+            "uuid": "f615e6d7-aab9-4f24-8f1d-99da86e8befb",
+            "points_count": 251456
+          },
+          {
+            "uuid": "18ec2638-c50f-4b2e-a9fd-69112a28d683",
+            "points_count": 251444
+          }
+        ],
+        "progress": {
+          "name": "Segment Optimizing",
+          "started_at": "2026-08-13T12:29:56.393190181Z",
+          "finished_at": null,
+          "duration_sec": null,
+          "total": null,
+          "done": null,
+          "children": [
+            {
+              "name": "copy_data",
+              "started_at": "2026-08-13T12:29:56.400291297Z",
+              "finished_at": null,
+              "duration_sec": null,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "populate_vector_storages",
+              "started_at": null,
+              "finished_at": null,
+              "duration_sec": null,
+              "total": null,
+              "done": null,
+              "children": null
+            },
+            {
+              "name": "wait_cpu_permit",
+              "started_at": null,
+              "finished_at": null,
+              "duration_sec": null,
+              "total": null,
+              "done": null,
+              "children": null
+            }
+          ]
+        }
+      }
+    ],
+    "completed": [],
+    "queued": [
+      {
+        "uuid": null,
+        "optimizer": "indexing",
+        "status": null,
+        "segments": [
+          {
+            "uuid": "dd57f10b-1162-44a4-a765-49c6fbf03d4a",
+            "points_count": 251456
+          }
+        ],
+        "progress": null
+      },
+      {
+        "uuid": null,
+        "optimizer": "indexing",
+        "status": null,
+        "segments": [
+          {
+            "uuid": "ddedc899-916f-4cb6-8826-332934f33cf6",
+            "points_count": 251456
+          }
+        ],
+        "progress": null
+      },
+      {
+        "uuid": null,
+        "optimizer": "indexing",
+        "status": null,
+        "segments": [
+          {
+            "uuid": "072239bc-8853-4138-a757-7474962f89e8",
+            "points_count": 251456
+          }
+        ],
+        "progress": null
+      },
+      {
+        "uuid": null,
+        "optimizer": "indexing",
+        "status": null,
+        "segments": [
+          {
+            "uuid": "befabfa0-3b50-4418-abd6-eb40322149a7",
+            "points_count": 251456
+          }
+        ],
+        "progress": null
+      }
+    ],
+    "idle_segments": []
+  }
+}
