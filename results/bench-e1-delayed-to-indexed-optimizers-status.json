@@ -8,18 +8,18 @@
     },
     "running": [
       {
-        "uuid": "eea84bc8-e106-4ad8-ac14-23ec63e03cd5",
+        "uuid": "966c0338-aae7-4330-a144-b42b44e0a18a",
         "optimizer": "indexing",
         "status": "optimizing",
         "segments": [
           {
-            "uuid": "7882ee78-c739-4eee-b326-b5b958267a92",
+            "uuid": "8c8ba72a-7a0a-41e7-9772-6726384026ec",
             "points_count": 251456
           }
         ],
         "progress": {
           "name": "Segment Optimizing",
-          "started_at": "2026-08-13T12:29:56.393206144Z",
+          "started_at": "2026-08-14T08:50:48.300683290Z",
           "finished_at": null,
           "duration_sec": null,
           "total": null,
@@ -27,7 +27,7 @@
           "children": [
             {
               "name": "copy_data",
-              "started_at": "2026-08-13T12:29:56.400199496Z",
+              "started_at": "2026-08-14T08:50:48.309691304Z",
               "finished_at": null,
               "duration_sec": null,
               "total": null,
@@ -56,22 +56,22 @@
         }
       },
       {
-        "uuid": "4da1494e-723c-4c57-84a4-b5d3050d7f0e",
+        "uuid": "40f41a3b-86b9-4a06-9d44-ba9b692232db",
         "optimizer": "indexing",
         "status": "optimizing",
         "segments": [
           {
-            "uuid": "f615e6d7-aab9-4f24-8f1d-99da86e8befb",
+            "uuid": "4f9df5a5-6b33-4501-b9ec-0275e1028747",
             "points_count": 251456
           },
           {
-            "uuid": "18ec2638-c50f-4b2e-a9fd-69112a28d683",
+            "uuid": "e710b568-765f-493e-9b74-4ae555371791",
             "points_count": 251444
           }
         ],
         "progress": {
           "name": "Segment Optimizing",
-          "started_at": "2026-08-13T12:29:56.393190181Z",
+          "started_at": "2026-08-14T08:50:48.300665062Z",
           "finished_at": null,
           "duration_sec": null,
           "total": null,
@@ -79,7 +79,7 @@
           "children": [
             {
               "name": "copy_data",
-              "started_at": "2026-08-13T12:29:56.400291297Z",
+              "started_at": "2026-08-14T08:50:48.309690509Z",
               "finished_at": null,
               "duration_sec": null,
               "total": null,
@@ -116,7 +116,7 @@
         "status": null,
         "segments": [
           {
-            "uuid": "dd57f10b-1162-44a4-a765-49c6fbf03d4a",
+            "uuid": "0a60ed8c-e996-47a7-94a6-0d24ab1eb242",
             "points_count": 251456
           }
         ],
@@ -128,7 +128,7 @@
         "status": null,
         "segments": [
           {
-            "uuid": "ddedc899-916f-4cb6-8826-332934f33cf6",
+            "uuid": "c086c558-49c7-42a3-8f50-bfb7dd465523",
             "points_count": 251456
           }
         ],
@@ -140,7 +140,7 @@
         "status": null,
         "segments": [
           {
-            "uuid": "072239bc-8853-4138-a757-7474962f89e8",
+            "uuid": "b8dfd048-0ee8-49eb-9591-84793b82743a",
             "points_count": 251456
           }
         ],
@@ -152,7 +152,7 @@
         "status": null,
         "segments": [
           {
-            "uuid": "befabfa0-3b50-4418-abd6-eb40322149a7",
+            "uuid": "7bc8ce8d-f78d-4b1c-bbbe-9fe151495390",
             "points_count": 251456
           }
         ],
